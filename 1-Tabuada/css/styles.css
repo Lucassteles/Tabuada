@@ -1,0 +1,119 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: helvetica, Arial, sans-serif;
+}
+
+body{
+  text-align:center;
+  padding:2rem;
+  min-height:100vh;
+  background:linear-gradient(180deg, #db4444 0%, #3f24dd 98%);
+  color:#fff;
+}
+
+h2{ margin-bottom:1rem; }
+
+/* FORM (grid deixa perfeito) */
+#multiplication-form{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+
+  max-width:340px;
+  margin:1rem auto;
+  padding:1rem;
+
+  background:#fff;
+  color:#333;
+  border-radius:1rem;
+}
+
+/* Campos iguais */
+.field{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.field label{
+  margin-bottom:0.6rem;
+  font-size:0.85rem;
+  font-weight:bold;
+}
+
+.field input[type="number"]{
+  width:60px;
+  padding:0.6rem 0.4rem;
+  border:1px solid #333;
+  border-radius:5px;
+  text-align:center;
+  outline:none;
+}
+
+.field input[type="number"]:focus{
+  border-color:#555;
+}
+
+/* Botão embaixo ocupando as 2 colunas */
+#multiplication-form input[type="submit"]{
+  grid-column: 1 / -1; /* pega as duas colunas */
+
+  height:50px;
+  width:200px;
+  margin: 6px auto 0;
+
+  color:#fff;
+  background:#333;
+  border:1px solid #333;
+  border-radius:8px;
+
+  cursor:pointer;
+  font-weight:bold;
+}
+
+#multiplication-form input[type="submit"]:hover{
+  filter:brightness(1.1);
+}
+
+/* RESULTADO */
+#multiplication-table{
+  max-width:340px;
+  margin:1rem auto;
+}
+
+#multiplication-title{
+  margin-bottom:1rem;
+}
+
+#multiplication-operation{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  padding:1.5rem 1rem;
+  background:#fff;
+  color:#333;
+  border-radius:1rem;
+}
+
+/* Linhas */
+#multiplication-operation .row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  width:180px;
+  padding:0.5rem;
+
+  border:1px solid #ccc;
+  border-bottom:none;
+}
+
+#multiplication-operation .row:last-child{
+  border-bottom:1px solid #ccc;
+}
+
+#multiplication-operation .operation{ font-weight:bold; }
+#multiplication-operation .result{ margin-left:0.4rem; }
